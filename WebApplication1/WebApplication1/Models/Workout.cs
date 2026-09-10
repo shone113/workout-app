@@ -3,7 +3,7 @@
     public class Workout
     {
         public int Id { get; set; }
-        public string UserId { get; set; } = null!;
+        public int UserId { get; set; }
         public ExerciseType ExerciseType { get; set; }
         public DateTime StartTime { get; set; }
         public int DurationMinutes { get; set; }
