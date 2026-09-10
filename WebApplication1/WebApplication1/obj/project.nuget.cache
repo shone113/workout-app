@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IFe5wFQ3E54=",
+  "dgSpecHash": "smZ1v9w9PUI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\nenad\\source\\repos\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\Users\\nenad\\Desktop\\WeDoSoftware\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nenad\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\nenad\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
