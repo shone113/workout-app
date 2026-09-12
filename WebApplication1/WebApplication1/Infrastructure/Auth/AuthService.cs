@@ -5,13 +5,13 @@ using WebApplication1.DTO;
 
 namespace WebApplication1.Infrastructure.Auth
 {
-    public class AuthService
+    public class AuthService : IAuthService
     {
         private readonly IUserRepository _userRepository;
-        private readonly PasswordHasher<User> _hasher;
-        private readonly JwtService _jwtService;
+        private readonly IPasswordHasher<User> _hasher;
+        private readonly IJwtService _jwtService;
 
-        public AuthService(IUserRepository userRepository, PasswordHasher<User> hasher, JwtService jwtService)
+        public AuthService(IUserRepository userRepository, IPasswordHasher<User> hasher, IJwtService jwtService)
         {
             _userRepository = userRepository;
             _hasher = hasher;

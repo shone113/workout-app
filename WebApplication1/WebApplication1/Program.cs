@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WebApplication1.Core.Domain;
 using WebApplication1.Core.Interfaces;
+using WebApplication1.Core.Services;
 using WebApplication1.Infrastructure.Auth;
 using WebApplication1.Infrastructure.Data;
 using WebApplication1.Infrastructure.Repositories;
@@ -15,9 +16,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<PasswordHasher<User>>();
-
-builder.Services.AddScoped<JwtService>();
-builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<IJwtService, JwtService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IWorkoutService, WorkoutService>();
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 

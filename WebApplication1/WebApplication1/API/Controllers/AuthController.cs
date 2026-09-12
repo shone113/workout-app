@@ -5,7 +5,7 @@ using WebApplication1.DTO;
 using WebApplication1.Infrastructure.Auth;
 using WebApplication1.Core.Domain;
 
-namespace WebApplication1.Controllers
+namespace WebApplication1.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
