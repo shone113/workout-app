@@ -1,13 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebApplication1.Models
+namespace WebApplication1.Core.Domain
 {
     public class User
     {
         public int Id { get; set; }
-
-        public string Username { get; set; } = null!;
 
         public string Email { get; set; } = null!;
 

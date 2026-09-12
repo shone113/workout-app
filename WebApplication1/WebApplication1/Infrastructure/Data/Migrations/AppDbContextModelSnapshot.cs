@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using WebApplication1.Data;
+using WebApplication1.Infrastructure.Data;
 
 #nullable disable
 
@@ -22,7 +22,7 @@ namespace WebApplication1.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("WebApplication1.Models.User", b =>
+            modelBuilder.Entity("WebApplication1.Core.Domain.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -38,16 +38,12 @@ namespace WebApplication1.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.HasKey("Id");
 
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("WebApplication1.Models.Workout", b =>
+            modelBuilder.Entity("WebApplication1.Core.Domain.Workout", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -87,9 +83,9 @@ namespace WebApplication1.Migrations
                     b.ToTable("Workouts");
                 });
 
-            modelBuilder.Entity("WebApplication1.Models.Workout", b =>
+            modelBuilder.Entity("WebApplication1.Core.Domain.Workout", b =>
                 {
-                    b.HasOne("WebApplication1.Models.User", "User")
+                    b.HasOne("WebApplication1.Core.Domain.User", "User")
                         .WithMany("Workouts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -98,7 +94,7 @@ namespace WebApplication1.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("WebApplication1.Models.User", b =>
+            modelBuilder.Entity("WebApplication1.Core.Domain.User", b =>
                 {
                     b.Navigation("Workouts");
                 });
