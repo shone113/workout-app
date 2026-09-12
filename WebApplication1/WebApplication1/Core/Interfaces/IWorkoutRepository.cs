@@ -6,6 +6,7 @@ namespace WebApplication1.Core.Interfaces
     {
         Task<Workout?> GetByIdAsync(int id);
         Task<IEnumerable<Workout>> GetAllByUserIdAsync(int userId);
+        Task<IEnumerable<Workout>> GetByUserIdAndDateRangeAsync(int userId, DateTime startDate, DateTime endDate);
         Task AddAsync(Workout workout);
         void Delete(Workout workout);
         Task SaveChangesAsync();

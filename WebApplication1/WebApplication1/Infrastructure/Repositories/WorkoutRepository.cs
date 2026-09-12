@@ -27,6 +27,18 @@ namespace WebApplication1.Infrastructure.Repositories
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<Workout>> GetByUserIdAndDateRangeAsync(int userId, DateTime startDate, DateTime endDate)
+        {
+            var inclusiveEnd = endDate.Date.AddDays(1);
+
+            return await _context.Workouts
+                .Where(w => w.UserId == userId
+                         && w.StartTime >= startDate.Date
+                         && w.StartTime < inclusiveEnd)
+                .OrderBy(w => w.StartTime)
+                .ToListAsync();
+        }
+
         public async Task AddAsync(Workout workout)
         {
             await _context.Workouts.AddAsync(workout);

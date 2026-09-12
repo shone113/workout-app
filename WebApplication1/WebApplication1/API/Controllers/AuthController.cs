@@ -25,7 +25,7 @@ namespace WebApplication1.API.Controllers
             var result = await _authService.RegisterAsync(dto);
 
             if (result == null)
-                return BadRequest("Korisničko ime je zauzeto.");
+                return BadRequest("Korisnik sa navedenim mejlom je vec registrovan.");
 
             return Ok(result);
         }
