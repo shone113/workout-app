@@ -4,6 +4,7 @@ using WebApplication1.Infrastructure.Data;
 using WebApplication1.DTO;
 using WebApplication1.Infrastructure.Auth;
 using WebApplication1.Core.Domain;
+using WebApplication1.Core.Interfaces;
 
 namespace WebApplication1.API.Controllers
 {
@@ -11,9 +12,9 @@ namespace WebApplication1.API.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
-        private readonly AuthService _authService;
+        private readonly IAuthService _authService;
 
-        public AuthController(AuthService authService)
+        public AuthController(IAuthService authService)
         {
             _authService = authService;
         }
