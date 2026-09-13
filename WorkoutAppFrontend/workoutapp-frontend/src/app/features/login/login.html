@@ -1,0 +1,11 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>Email</label>
+  <input type="email" formControlName="email" />
+
+  <label>Lozinka</label>
+  <input type="password" formControlName="password" />
+
+  <button type="submit" [disabled]="form.invalid">Uloguj se</button>
+
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+</form>
