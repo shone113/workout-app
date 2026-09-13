@@ -1,11 +1,23 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <label>Email</label>
-  <input type="email" formControlName="email" />
+<div class="login-page">
+  <div class="login-card">
+    <h1 class="login-title">Prijava</h1>
 
-  <label>Lozinka</label>
-  <input type="password" formControlName="password" />
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" />
+      </div>
 
-  <button type="submit" [disabled]="form.invalid">Uloguj se</button>
+      <div class="form-group">
+        <label for="password">Lozinka</label>
+        <input id="password" type="password" formControlName="password" />
+      </div>
 
-  <p *ngIf="errorMessage">{{ errorMessage }}</p>
-</form>
+      <button type="submit" [disabled]="form.invalid">Uloguj se</button>
+
+      <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+    </form>
+
+    <p class="register-hint">Already have account? <a routerLink="/register">Register</a></p>
+  </div>
+</div>

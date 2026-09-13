@@ -1,0 +1,113 @@
+:host {
+  --color-cream: #ececa3;
+  --color-light-green: #b5e550;
+  --color-mid-green: #abc32f;
+  --color-green: #809c13;
+  --color-dark-green: #607c3c;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, var(--color-cream), var(--color-light-green));
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  background: #ffffff;
+  border: 2px solid var(--color-mid-green);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(96, 124, 60, 0.25);
+  padding: 32px 28px;
+  box-sizing: border-box;
+}
+
+.login-title {
+  margin: 0 0 24px;
+  text-align: center;
+  color: var(--color-dark-green);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-dark-green);
+}
+
+input {
+  padding: 10px 12px;
+  border: 1px solid var(--color-mid-green);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: var(--color-green);
+  box-shadow: 0 0 0 3px rgba(181, 229, 80, 0.45);
+}
+
+button[type="submit"] {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-green);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background: var(--color-dark-green);
+}
+
+button[type="submit"]:disabled {
+  background: var(--color-cream);
+  color: var(--color-dark-green);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-message {
+  margin: 14px 0 0;
+  color: #c0392b;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.register-hint {
+  margin: 20px 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-dark-green);
+}
+
+.register-hint a {
+  color: var(--color-green);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-hint a:hover {
+  text-decoration: underline;
+  color: var(--color-dark-green);
+}
